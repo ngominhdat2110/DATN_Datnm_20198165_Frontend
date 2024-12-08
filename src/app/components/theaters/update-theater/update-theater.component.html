@@ -1,0 +1,20 @@
+<div class="update-customer-container">
+    <h3>Cập nhật thông tin rạp phim</h3>
+    <form (ngSubmit)="onSubmit()" class="customer-form">
+    
+        <div class="form-group">
+            <label for="fullName">Tên rạp</label>
+            <input type="text" class="form-control" id="fullName"
+                [(ngModel)]="theater.name" name="fullName" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="email">Địa chỉ</label>
+            <input type="email" class="form-control" id="email"
+                [(ngModel)]="theater.address" name="email" required>
+        </div>
+    
+        <button class="btn btn-success" type="submit">Cập nhật</button>
+    
+    </form>
+</div>

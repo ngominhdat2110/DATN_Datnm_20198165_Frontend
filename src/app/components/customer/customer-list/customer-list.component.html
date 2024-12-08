@@ -1,0 +1,56 @@
+<!-- <h2> Customers List</h2>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th> Họ và tên </th>
+            <th> Địa chỉ email </th>
+            <th> Số điện thoại </th>
+            <th> Mật khẩu </th>
+            <th> Địa chỉ </th>
+            <th> Giới tính </th>
+            <th> Thao tác </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let customer of customers" >
+            <td> {{ customer.fullName }} </td>
+            <td> {{ customer.email }} </td>
+            <td> {{ customer.phoneNumber }} </td>
+            <td> {{ customer.password }} </td>
+            <td> {{ customer.address }} </td>
+            <td> {{ customer.gender }} </td>
+            <td>
+                <button (click) = "updateCustomer(customer.id)" class = "btn btn-info"> Chỉnh sửa</button>
+                <button (click) = "deleteCustomer(customer.id)" class = "btn btn-danger" style="margin-left: 10px"> Xóa</button>
+                <button (click) = "customerDetail(customer.id)" class = "btn btn-info" style="margin-left: 10px"> Xem chi tiết</button>
+            </td>
+        </tr>
+    </tbody>
+</table> -->
+
+
+<div class="container">
+    <h2 class="page-title">Danh sách khách hàng</h2>
+    <ul class="responsive-table">
+        <li class="table-header">
+            <div class="col col-2">Họ và tên</div>
+            <div class="col col-2">Địa chỉ email</div>
+            <div class="col col-2">Số điện thoại</div>
+            <div class="col col-3">Địa chỉ</div>
+            <div class="col col-1">Giới tính</div>
+            <div class="col col-3">Thao tác</div>
+        </li>
+        <li class="table-row" *ngFor="let customer of customers">
+            <div class="col col-2" data-label="Họ và tên"><span>{{ customer.fullName }}</span></div>
+            <div class="col col-2" data-label="Địa chỉ email"><span>{{ customer.email }}</span></div>
+            <div class="col col-2" data-label="Số điện thoại"><span>{{ customer.phoneNumber }}</span></div>
+            <div class="col col-3" data-label="Địa chỉ"><span>{{ customer.address }}</span></div>
+            <div class="col col-1" data-label="Giới tính"><span>{{ customer.gender }}</span></div>
+            <div class="col col-3">
+                <button (click)="updateCustomer(customer.id)" class="action-btn">Chỉnh sửa</button>
+                <button (click)="deleteCustomer(customer.id)" class="action-btn delete-btn">Xóa</button>
+                <button (click)="customerDetail(customer.id)" class="action-btn view-btn">Xem chi tiết</button>
+            </div>
+        </li>
+    </ul>
+</div>

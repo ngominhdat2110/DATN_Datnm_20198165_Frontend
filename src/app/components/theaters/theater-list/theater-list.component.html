@@ -1,0 +1,18 @@
+<div class="container">
+    <h2 class="page-title">Danh sách rạp phim</h2>
+    <ul class="responsive-table">
+        <li class="table-header">
+            <div class="col col-2">Tên rạp</div>
+            <div class="col col-3">Địa chỉ</div>
+        </li>
+        <li class="table-row" *ngFor="let theater of theaters">
+            <div class="col col-2" data-label="Họ và tên"><span>{{ theater.name }}</span></div>
+            <div class="col col-3" data-label="Địa chỉ"><span>{{ theater.address }}</span></div>
+            <div class="col col-1">
+                <button (click)="updateTheater(theater.id)" class="action-btn">Chỉnh sửa</button>
+                <button (click)="deleteTheater(theater.id)" class="action-btn delete-btn">Xóa</button>
+                <button (click)="theaterDetail(theater.id)" class="action-btn view-btn">Xem chi tiết</button>
+            </div>
+        </li>
+    </ul>
+</div>

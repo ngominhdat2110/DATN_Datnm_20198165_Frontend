@@ -1,0 +1,70 @@
+/* General Styles */
+h3 {
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  color: white;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.customer-details {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px
+}
+
+/* Each customer detail item */
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.detail-item:last-child {
+  border-bottom: none; /* Remove border from last item */
+}
+
+/* Label Styles */
+label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Span Styles (customer data) */
+span {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .customer-details {
+      padding: 15px;
+  }
+
+  .detail-item {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  label {
+      margin-bottom: 5px;
+  }
+
+  span {
+      font-size: 14px;
+  }
+}
+
+.detail-item:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}

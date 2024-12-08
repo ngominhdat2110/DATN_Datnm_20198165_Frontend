@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="create-theater.component.scss">
+    <title>Thêm mới rạp phim</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Thêm mới rạp phim</div>
+        <div class="content">
+            <form (ngSubmit)="onSubmit()">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Tên rạp</span>
+                        <input type="text" id="fullName" class="form-control"
+                            [(ngModel)]="theater.name" name="fullName" placeholder="Nhập tên rạp" required />
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Địa chỉ</span>
+                        <input type="text" id="address" name="address" [(ngModel)]="theater.address"
+                            placeholder="Nhập địa chỉ" required />
+                    </div>
+                </div>
+
+                <div class="button">
+                    <input type="submit" value="Xác nhận">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

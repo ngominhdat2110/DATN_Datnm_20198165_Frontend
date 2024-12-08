@@ -35,7 +35,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "@angular/material/prebuilt-themes/purple-green.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -44,19 +45,26 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2000kB",
+                  "maximumError": "2500kB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "5kb",
+                  "maximumError": "10kb"
                 }
               ],
               "outputHashing": "all"
             },
             "development": {
-              "optimization": false,
+              "optimization": {
+  "scripts": true,
+  "styles": {
+    "minify": true,
+    "inlineCritical": false
+  },
+  "fonts": true
+},
               "extractLicenses": false,
               "sourceMap": true
             }
@@ -94,12 +102,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "4b5a71a8-9b8e-48cd-a434-7c2dbb246b04"
   }
 }

@@ -3,8 +3,13 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'angular_frontend';
+  title = 'admin-panel-layout';
+  sideBarOpen = true;
+
+  sideBarToggler() {
+    this.sideBarOpen = !this.sideBarOpen;
+  }
 }

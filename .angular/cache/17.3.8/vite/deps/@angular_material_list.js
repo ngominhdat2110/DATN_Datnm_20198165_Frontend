@@ -2,6 +2,9 @@ import {
   MatDividerModule
 } from "./chunk-MAIS6JYQ.js";
 import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-4YBRSSEO.js";
+import {
   SelectionModel
 } from "./chunk-GPCH3TUI.js";
 import {
@@ -23,9 +26,6 @@ import {
   hasModifierKey
 } from "./chunk-M4Y7VYRI.js";
 import "./chunk-QSWDFV7A.js";
-import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-4YBRSSEO.js";
 import {
   CommonModule,
   NgTemplateOutlet

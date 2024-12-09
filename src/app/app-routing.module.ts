@@ -15,6 +15,10 @@ import { UpdateTheaterComponent } from './components/theaters/update-theater/upd
 
 
 import { HomeComponent } from './home/home.component';
+import { RoomListComponent } from './components/rooms/room-list/room-list.component';
+import { CreateRoomComponent } from './components/rooms/create-room/create-room.component';
+import { UpdateRoomComponent } from './components/rooms/update-room/update-room.component';
+import { RoomDetailsComponent } from './components/rooms/room-details/room-details.component';
 
 const routes: Routes = [
   //{path: "", redirectTo: 'home', pathMatch: 'full'},
@@ -35,6 +39,13 @@ const routes: Routes = [
   {path: "theaters", component: CreateTheaterComponent},
   {path: "theaters/update/:id", component: UpdateTheaterComponent},
   {path: "theaters/:id", component: TheaterDetailsComponent},
+
+  //room
+  {path: "", redirectTo: 'rooms', pathMatch: 'full'},
+  {path: "rooms", component: RoomListComponent},
+  {path: "rooms", component: CreateRoomComponent},
+  {path: "rooms/update/:id", component: UpdateRoomComponent},
+  {path: "rooms/:id", component: RoomDetailsComponent},
 
 ];
 

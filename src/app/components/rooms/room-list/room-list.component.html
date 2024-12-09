@@ -1,0 +1,20 @@
+<div class="container">
+    <h2 class="page-title">Danh sách phòng chiếu</h2>
+    <ul class="responsive-table">
+        <li class="table-header">
+            <div class="col col-2">Tên phòng chiếu</div>
+            <div class="col col-3">Tên rạp chiếu</div>
+            <!-- <div class="col col-3">Địa chỉ</div> -->
+        </li>
+        <li class="table-row" *ngFor="let room of rooms">
+            <div class="col col-2" data-label="tên phòng chiếu"><span>{{ room.name }}</span></div>
+            <div class="col col-3" data-label="tên rạp chiếu"><span>{{ getTheaterNameById(room.theaterId) }}</span></div>
+            <!-- <div class="col col-3" data-label="Địa chỉ"><span>{{ theater.address }}</span></div> -->
+            <div class="col col-1">
+                <button (click)="updateRoom(room.id)" class="action-btn">Chỉnh sửa</button>
+                <button (click)="deleteRoom(room.id)" class="action-btn delete-btn">Xóa</button>
+                <button (click)="roomDetail(room.id)" class="action-btn view-btn">Xem chi tiết</button>
+            </div>
+        </li>
+    </ul>
+</div>

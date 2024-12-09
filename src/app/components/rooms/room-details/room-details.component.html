@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="title">Chi tiết phòng chiếu</div>
+  
+    <div class="room-details">
+      <!-- Room details -->
+      <div class="details-box">
+        <label class="details">Tên phòng chiếu:</label>
+        <span>{{ room.name }}</span>
+      </div>
+  
+      <div class="details-box">
+        <label class="details">Trạng thái:</label>
+        <span>{{ room.status === 1 ? 'Hoạt động' : 'Không hoạt động' }}</span>
+      </div>
+  
+      <!-- Theater details -->
+      <div class="details-box">
+        <label class="details">Tên rạp:</label>
+        <span>{{ theater.name }}</span>
+      </div>
+  
+      <div class="details-box">
+        <label class="details">Vị trí:</label>
+        <span>{{ theater.address }}</span>
+      </div>
+    </div>
+  </div>
+  

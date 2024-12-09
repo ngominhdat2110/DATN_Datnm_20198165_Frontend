@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="create-room.component.scss">
+    <title>Thêm mới phòng chiếu</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Thêm mới phòng chiếu</div>
+        <div class="content">
+            <form (ngSubmit)="onSubmit()">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Tên phòng chiếu</span>
+                        <input type="text" id="fullName" class="form-control"
+                            [(ngModel)]="room.name" name="fullName" placeholder="Nhập tên phòng chiếu" required />
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Chọn rạp</span>
+                    <select class="form-control" [(ngModel)]="room.theaterId" name="theaterId" required>
+                        <option *ngFor="let theater of theaters" [value]="theater.id">
+                            {{ theater.name }}
+                        </option>
+                    </select>
+                </div>
+
+
+                <div class="button">
+                    <input type="submit" value="Xác nhận">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

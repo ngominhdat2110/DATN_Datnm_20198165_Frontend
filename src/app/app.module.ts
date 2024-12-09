@@ -25,6 +25,10 @@ import { CreateTheaterComponent } from './components/theaters/create-theater/cre
 import { TheaterDetailsComponent } from './components/theaters/theater-details/theater-details.component';
 import { TheaterListComponent } from './components/theaters/theater-list/theater-list.component';
 import { UpdateTheaterComponent } from './components/theaters/update-theater/update-theater.component';
+import { CreateRoomComponent } from './components/rooms/create-room/create-room.component';
+import { UpdateRoomComponent } from './components/rooms/update-room/update-room.component';
+import { RoomDetailsComponent } from './components/rooms/room-details/room-details.component';
+import { RoomListComponent } from './components/rooms/room-list/room-list.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,10 @@ import { UpdateTheaterComponent } from './components/theaters/update-theater/upd
     TheaterDetailsComponent,
     TheaterListComponent,
     UpdateTheaterComponent,
+    CreateRoomComponent,
+    UpdateRoomComponent,
+    RoomDetailsComponent,
+    RoomListComponent,
     // DashboardComponent
   ],
   imports: [

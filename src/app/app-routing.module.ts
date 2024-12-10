@@ -23,6 +23,10 @@ import { SeatListComponent } from './components/seats/seat-list/seat-list.compon
 import { CreateSeatComponent } from './components/seats/create-seat/create-seat.component';
 import { UpdateSeatComponent } from './components/seats/update-seat/update-seat.component';
 import { SeatDetailsComponent } from './components/seats/seat-details/seat-details.component';
+import { MovieListComponent } from './components/movies/movie-list/movie-list.component';
+import { CreateMovieComponent } from './components/movies/create-movie/create-movie.component';
+import { UpdateMovieComponent } from './components/movies/update-movie/update-movie.component';
+import { MovieDetailsComponent } from './components/movies/movie-details/movie-details.component';
 
 const routes: Routes = [
   //{path: "", redirectTo: 'home', pathMatch: 'full'},
@@ -57,6 +61,13 @@ const routes: Routes = [
   {path: "seats", component: CreateSeatComponent},
   {path: "seats/update/:id", component: UpdateSeatComponent},
   {path: "seats/:id", component: SeatDetailsComponent},
+
+  //movie
+  {path: "", redirectTo: 'movies', pathMatch: 'full'},
+  // {path: "movies", component: MovieListComponent},
+  {path: "movies", component: CreateMovieComponent},
+  {path: "movies/update/:id", component: UpdateMovieComponent},
+  {path: "movies/:id", component: MovieDetailsComponent},
 ];
 
 @NgModule({

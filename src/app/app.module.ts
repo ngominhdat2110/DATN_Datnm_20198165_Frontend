@@ -33,6 +33,12 @@ import { CreateSeatComponent } from './components/seats/create-seat/create-seat.
 import { SeatDetailsComponent } from './components/seats/seat-details/seat-details.component';
 import { SeatListComponent } from './components/seats/seat-list/seat-list.component';
 import { UpdateSeatComponent } from './components/seats/update-seat/update-seat.component';
+import { CreateMovieComponent } from './components/movies/create-movie/create-movie.component';
+import { MovieDetailsComponent } from './components/movies/movie-details/movie-details.component';
+import { MovieListComponent } from './components/movies/movie-list/movie-list.component';
+import { UpdateMovieComponent } from './components/movies/update-movie/update-movie.component';
+
+import { SafeUrlPipe } from './pipes/safe-url.pipe';
 
 @NgModule({
   declarations: [
@@ -56,6 +62,11 @@ import { UpdateSeatComponent } from './components/seats/update-seat/update-seat.
     SeatDetailsComponent,
     SeatListComponent,
     UpdateSeatComponent,
+    CreateMovieComponent,
+    MovieDetailsComponent,
+    MovieListComponent,
+    UpdateMovieComponent,
+    SafeUrlPipe   ,
     // DashboardComponent
   ],
   imports: [

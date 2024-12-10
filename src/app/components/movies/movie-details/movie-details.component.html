@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./movie-details.component.css">
+    <title>Chi tiết phim</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="movie-detail">
+            <h2 class="movie-title">{{ movie.name }}</h2>
+            <div class="movie-info">
+                <div class="info-item">
+                    <span class="label">Thể loại:</span>
+                    <span class="value">{{ movie.genre }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Thời gian:</span>
+                    <span class="value">{{ movie.duration }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Ngày phát hành:</span>
+                    <span class="value">{{ movie.releaseDate | date:'dd/MM/yyyy' }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Đạo diễn:</span>
+                    <span class="value">{{ movie.director }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Diễn viên:</span>
+                    <span class="value">{{ movie.cast }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Ngôn ngữ:</span>
+                    <span class="value">{{ movie.language }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Đánh giá:</span>
+                    <span class="value">{{ movie.rated }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">Chi tiết:</span>
+                    <span class="value">{{ movie.detail }}</span>
+                </div>
+            </div>
+
+            <div class="movie-avatar">
+                <img *ngIf="movie.avatar" [src]="movie.avatar" alt="Avatar" />
+            </div>
+
+            <div class="movie-trailer">
+                <h3>Trailer:</h3>
+                <iframe *ngIf="movie.trailer" [src]="movie.trailer | safeUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="back-button">
+            <button (click)="goToMovieList()">Quay lại danh sách phim</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<div class="update-customer-container">
+    <h3>Cập nhật thông tin ghế ngồi</h3>
+    <form (ngSubmit)="onSubmit()" class="customer-form">
+    
+        <div class="form-group">
+            <label for="fullName">Tên ghế</label>
+            <input type="text" class="form-control" id="fullName"
+                [(ngModel)]="seat.name" name="fullName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="fullName">Loại ghế</label>
+            <input type="text" class="form-control" id="fullName"
+                [(ngModel)]="seat.type" name="fullName" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="email">Chọn phòng chiếu</label>
+            <select class="form-control" [(ngModel)]="seat.roomId" name="roomId" required>
+                <option *ngFor="let room of rooms" [value]="room.id">
+                    {{ room.name }}
+                </option>
+            </select>
+        </div>
+    
+        <button class="btn btn-success" type="submit">Cập nhật</button>
+    
+    </form>
+</div>

@@ -29,6 +29,10 @@ import { CreateRoomComponent } from './components/rooms/create-room/create-room.
 import { UpdateRoomComponent } from './components/rooms/update-room/update-room.component';
 import { RoomDetailsComponent } from './components/rooms/room-details/room-details.component';
 import { RoomListComponent } from './components/rooms/room-list/room-list.component';
+import { CreateSeatComponent } from './components/seats/create-seat/create-seat.component';
+import { SeatDetailsComponent } from './components/seats/seat-details/seat-details.component';
+import { SeatListComponent } from './components/seats/seat-list/seat-list.component';
+import { UpdateSeatComponent } from './components/seats/update-seat/update-seat.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +52,10 @@ import { RoomListComponent } from './components/rooms/room-list/room-list.compon
     UpdateRoomComponent,
     RoomDetailsComponent,
     RoomListComponent,
+    CreateSeatComponent,
+    SeatDetailsComponent,
+    SeatListComponent,
+    UpdateSeatComponent,
     // DashboardComponent
   ],
   imports: [

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="create-seat.component.scss">
+    <title>Thêm mới ghế ngồi</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">Thêm mới ghế ngồi</div>
+        <div class="content">
+            <form (ngSubmit)="onSubmit()">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Tên ghế</span>
+                        <input type="text" id="fullName" class="form-control"
+                            [(ngModel)]="seat.name" name="fullName" placeholder="Nhập tên ghế" required />
+                    </div>
+                </div>
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Loại ghế</span>
+                        <input type="text" id="fullName" class="form-control"
+                            [(ngModel)]="seat.type" name="fullName" placeholder="Nhập thể loại ghế" required />
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <span class="details">Chọn phòng</span>
+                    <select class="form-control" [(ngModel)]="seat.roomId" name="roomId" required>
+                        <option *ngFor="let room of rooms" [value]="room.id">
+                            {{ room.name }}
+                        </option>
+                    </select>
+                </div>
+
+
+                <div class="button">
+                    <input type="submit" value="Xác nhận">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

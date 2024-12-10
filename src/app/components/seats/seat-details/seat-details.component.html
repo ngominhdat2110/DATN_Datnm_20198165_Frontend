@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="title">Chi tiết ghế ngồi</div>
+  
+    <div class="room-details">
+      <!-- Room details -->
+      <div class="details-box">
+        <label class="details">Tên ghế:</label>
+        <span>{{ seat.name }}</span>
+      </div>
+
+      <div class="details-box">
+        <label class="details">Loại ghế:</label>
+        <span>{{ seat.type }}</span>
+      </div>
+  
+      <div class="details-box">
+        <label class="details">Trạng thái:</label>
+        <span>{{ seat.status === 1 ? 'Hoạt động' : 'Không hoạt động' }}</span>
+      </div>
+  
+      <!-- Theater details -->
+      <div class="details-box">
+        <label class="details">Tên phòng:</label>
+        <span>{{ room.name }}</span>
+      </div>
+
+    </div>
+  </div>
+  

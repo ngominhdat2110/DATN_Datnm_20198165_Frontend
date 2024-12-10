@@ -1,0 +1,20 @@
+<div class="container">
+    <h2 class="page-title">Danh sách ghế</h2>
+    <ul class="responsive-table">
+        <li class="table-header">
+            <div class="col col-1">Tên ghế ngồi</div>
+            <div class="col col-2">Loại ghế</div>
+            <div class="col col-3">Tên phòng chiếu</div>
+        </li>
+        <li class="table-row" *ngFor="let seat of seats">
+            <div class="col col-1" data-label="tên ghế ngồi"><span>{{ seat.name }}</span></div>
+            <div class="col col-2" data-label="loại ghế"><span>{{ seat.type }}</span></div>
+            <div class="col col-3" data-label="tên phòng chiếu"><span>{{ getRoomNameById(seat.roomId) }}</span></div>
+            <div class="col col-1">
+                <button (click)="updateSeat(seat.id)" class="action-btn">Chỉnh sửa</button>
+                <button (click)="deleteSeat(seat.id)" class="action-btn delete-btn">Xóa</button>
+                <button (click)="seatDetail(seat.id)" class="action-btn view-btn">Xem chi tiết</button>
+            </div>
+        </li>
+    </ul>
+</div>

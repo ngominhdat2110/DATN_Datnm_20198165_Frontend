@@ -19,6 +19,10 @@ import { RoomListComponent } from './components/rooms/room-list/room-list.compon
 import { CreateRoomComponent } from './components/rooms/create-room/create-room.component';
 import { UpdateRoomComponent } from './components/rooms/update-room/update-room.component';
 import { RoomDetailsComponent } from './components/rooms/room-details/room-details.component';
+import { SeatListComponent } from './components/seats/seat-list/seat-list.component';
+import { CreateSeatComponent } from './components/seats/create-seat/create-seat.component';
+import { UpdateSeatComponent } from './components/seats/update-seat/update-seat.component';
+import { SeatDetailsComponent } from './components/seats/seat-details/seat-details.component';
 
 const routes: Routes = [
   //{path: "", redirectTo: 'home', pathMatch: 'full'},
@@ -47,6 +51,12 @@ const routes: Routes = [
   {path: "rooms/update/:id", component: UpdateRoomComponent},
   {path: "rooms/:id", component: RoomDetailsComponent},
 
+  //seat
+  {path: "", redirectTo: 'seats', pathMatch: 'full'},
+  {path: "seats", component: SeatListComponent},
+  {path: "seats", component: CreateSeatComponent},
+  {path: "seats/update/:id", component: UpdateSeatComponent},
+  {path: "seats/:id", component: SeatDetailsComponent},
 ];
 
 @NgModule({

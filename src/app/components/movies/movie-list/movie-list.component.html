@@ -1,1 +1,30 @@
-<p>movie-list works!</p>
+<div class="container">
+    <!-- Nút "Thêm mới" ở góc trên bên phải -->
+    <div class="add-button">
+        <button (click)="createMovie()">Thêm mới</button>
+    </div>
+    
+    <h2 class="page-title">Danh sách phim</h2>
+    <ul class="responsive-table">
+        <li class="table-header">
+            <div class="col col-2">Tên phim</div>
+            <div class="col col-1">Thể loại</div>
+            <div class="col col-1">Thời lượng</div>
+            <div class="col col-1">Ngôn ngữ</div>
+            <div class="col col-1">Ngày phát hành</div>
+            <div class="col col-1">Thao tác</div>
+        </li>
+        <li class="table-row" *ngFor="let movie of movies">
+            <div class="col col-2" data-label="Tên phim"><span>{{ movie.name }}</span></div>
+            <div class="col col-1" data-label="Thể loại"><span>{{ movie.genre }}</span></div>
+            <div class="col col-1" data-label="Thời lượng"><span>{{ movie.duration }}</span></div>
+            <div class="col col-1" data-label="Ngôn ngữ"><span>{{ movie.language }}</span></div>
+            <div class="col col-1" data-label="Ngày phát hành"><span>{{ movie.releaseDate }}</span></div>
+            <div class="col col-1">
+                <button (click)="updateMovie(movie.id)" class="action-btn">Chỉnh sửa</button>
+                <button (click)="deleteMovie(movie.id)" class="action-btn delete-btn">Xóa</button>
+                <button (click)="movieDetail(movie.id)" class="action-btn view-btn">Xem chi tiết</button>
+            </div>
+        </li>
+    </ul>
+</div>

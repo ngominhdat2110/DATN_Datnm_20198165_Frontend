@@ -11,8 +11,14 @@
 <body>
     <div class="container">
         <div class="movie-detail">
-            <h2 class="movie-title">{{ movie.name }}</h2>
+            <!-- Image on the left -->
+            <div class="movie-avatar">
+                <img *ngIf="movie.avatar" [src]="'data:image/png;base64,' + movie.avatar" alt="Avatar" />
+            </div>
+            
+            <!-- Movie info on the right -->
             <div class="movie-info">
+                <h2 class="movie-title">{{ movie.name }}</h2>
                 <div class="info-item">
                     <span class="label">Thể loại:</span>
                     <span class="value">{{ movie.genre }}</span>
@@ -30,10 +36,6 @@
                     <span class="value">{{ movie.director }}</span>
                 </div>
                 <div class="info-item">
-                    <span class="label">Diễn viên:</span>
-                    <span class="value">{{ movie.cast }}</span>
-                </div>
-                <div class="info-item">
                     <span class="label">Ngôn ngữ:</span>
                     <span class="value">{{ movie.language }}</span>
                 </div>
@@ -46,16 +48,13 @@
                     <span class="value">{{ movie.detail }}</span>
                 </div>
             </div>
-
-            <div class="movie-avatar">
-                <img *ngIf="movie.avatar" [src]="movie.avatar" alt="Avatar" />
-            </div>
-
-            <div class="movie-trailer">
-                <h3>Trailer:</h3>
-                <iframe *ngIf="movie.trailer" [src]="movie.trailer | safeUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
         </div>
+
+        <div class="movie-trailer">
+            <h3>Trailer:</h3>
+            <iframe *ngIf="movie.trailer" [src]="movie.trailer | safeUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
         <div class="back-button">
             <button (click)="goToMovieList()">Quay lại danh sách phim</button>
         </div>

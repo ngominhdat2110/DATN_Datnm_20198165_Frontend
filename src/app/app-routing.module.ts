@@ -64,8 +64,8 @@ const routes: Routes = [
 
   //movie
   {path: "", redirectTo: 'movies', pathMatch: 'full'},
-  // {path: "movies", component: MovieListComponent},
-  {path: "movies", component: CreateMovieComponent},
+  {path: "movies", component: MovieListComponent},
+  {path: "movies/create", component: CreateMovieComponent},
   {path: "movies/update/:id", component: UpdateMovieComponent},
   {path: "movies/:id", component: MovieDetailsComponent},
 ];

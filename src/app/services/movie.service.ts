@@ -16,8 +16,21 @@ export class MovieService {
     return this.httpClient.get<Movie[]>(`${this.baseURL}`);
   }
 
-  createMovie(movie : Movie): Observable<Movie> {
-    return this.httpClient.post<Movie>(`${this.baseURL}`, movie);
+  // createMovie(movie : Movie): Observable<Movie> {
+  //   return this.httpClient.post<Movie>(`${this.baseURL}`, movie);
+  // }
+
+  createMovie(file: File, movie: Movie): Observable<Movie> {
+    const formData = new FormData();
+
+    // Thêm tệp ảnh vào FormData
+    formData.append('avt', file); // 'avt' là tên trường trong API
+
+    // Thêm đối tượng movie dưới dạng JSON
+    formData.append('movie', JSON.stringify(movie)); // 'movie' là tên trường trong API để chứa thông tin movie
+
+    // Gửi formData đi qua phương thức POST
+    return this.httpClient.post<Movie>(this.baseURL, formData);
   }
 
   getMovieById(id: number): Observable<Movie>{

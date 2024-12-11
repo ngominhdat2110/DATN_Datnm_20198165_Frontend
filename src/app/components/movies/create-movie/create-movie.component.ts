@@ -6,41 +6,47 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-create-movie',
   templateUrl: './create-movie.component.html',
-  styleUrl: './create-movie.component.css'
+  styleUrls: ['./create-movie.component.css']
 })
 export class CreateMovieComponent implements OnInit {
-
-
   movie: Movie = new Movie();
-  
-  constructor(private movieService : MovieService, private router : Router) {}
+  selectedFile: File | null = null; // Biến để lưu file ảnh
 
-  ngOnInit(): void {
-    
-  }
+  constructor(private movieService: MovieService, private router: Router) {}
 
+  ngOnInit(): void {}
+
+  // Hàm để gửi yêu cầu tạo movie
   saveMovie() {
-    this.movieService.createMovie(this.movie).subscribe( {
-      next: data => console.log(data),
-      error: error => console.log(error)
-    } )
-    this.goToMovieList()
+    if (this.selectedFile) {
+      this.movieService.createMovie(this.selectedFile, this.movie).subscribe({
+        next: data => {
+          console.log(data);
+          this.goToMovieList();
+        },
+        error: error => {
+          console.log(error);
+        }
+      });
+    }
   }
 
+  // Điều hướng tới danh sách các bộ phim
   goToMovieList() {
     this.router.navigate(['/movies']);
   }
 
-  onSubmit(){
+  // Hàm gửi form khi người dùng nhấn nút submit
+  onSubmit() {
     console.log(this.movie);
-    this.saveMovie()
+    this.saveMovie();
   }
 
+  // Hàm xử lý thay đổi tệp khi người dùng chọn ảnh
   onFileChange(event: any): void {
     const file = event.target.files[0];
     if (file) {
-      this.movie.avatar = file; // Store the selected file as movie avatar
+      this.selectedFile = file; // Lưu trữ file ảnh được chọn
     }
   }
-  
 }

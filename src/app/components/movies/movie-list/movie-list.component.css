@@ -1,0 +1,123 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative; /* Cần để nút "Thêm mới" có thể căn chỉnh ở góc */
+  }
+  
+  /* Nút "Thêm mới" */
+  .add-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .add-button button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .add-button button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+  }
+  
+  /* Cấu trúc bảng */
+  .page-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    /* color: #333; */
+    color: white;
+  }
+  
+  .responsive-table {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .table-header {
+    display: flex;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 8px;
+  }
+  
+  .col {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .table-row {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px 10px;
+    margin-top: 10px;
+    transition: box-shadow 0.3s ease;
+    color: black;
+  }
+  
+  .table-row:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style các button hành động */
+  .action-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-right: 10px;
+  }
+  
+  .action-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  /* Nút xóa */
+  .delete-btn {
+    background-color: #dc3545;
+  }
+  
+  .delete-btn:hover {
+    background-color: #c82333;
+  }
+  
+  /* Nút xem chi tiết */
+  .view-btn {
+    background-color: #17a2b8;
+  }
+  
+  .view-btn:hover {
+    background-color: #138496;
+  }
+  

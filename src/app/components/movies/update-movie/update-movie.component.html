@@ -1,1 +1,62 @@
-<p>update-movie works!</p>
+<div class="container">
+    <!-- Nút "Quay lại" ở góc trên bên trái -->
+    <div class="back-button">
+        <button (click)="goToMovieList()">Quay lại</button>
+    </div>
+    
+    <h2 class="page-title">Cập nhật thông tin phim</h2>
+
+    <!-- Form cập nhật phim -->
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Tên phim:</label>
+            <input type="text" id="name" [(ngModel)]="movie.name" name="name" required />
+        </div>
+
+        <div class="form-group">
+            <label for="genre">Thể loại:</label>
+            <input type="text" id="genre" [(ngModel)]="movie.genre" name="genre" required />
+        </div>
+
+        <div class="form-group">
+            <label for="duration">Thời lượng:</label>
+            <input type="text" id="duration" [(ngModel)]="movie.duration" name="duration" required />
+        </div>
+
+        <div class="form-group">
+            <label for="director">Đạo diễn:</label>
+            <input type="text" id="director" [(ngModel)]="movie.director" name="director" required />
+        </div>
+
+        <div class="form-group">
+            <label for="language">Ngôn ngữ:</label>
+            <input type="text" id="language" [(ngModel)]="movie.language" name="language" required />
+        </div>
+
+        <div class="form-group">
+            <label for="rated">Đánh giá:</label>
+            <input type="text" id="rated" [(ngModel)]="movie.rated" name="rated" required />
+        </div>
+
+        <div class="form-group">
+            <label for="releaseDate">Ngày phát hành:</label>
+            <input type="date" id="releaseDate" [(ngModel)]="movie.releaseDate" name="releaseDate" required />
+        </div>
+
+        <div class="form-group">
+            <label for="detail">Chi tiết:</label>
+            <textarea id="detail" [(ngModel)]="movie.detail" name="detail" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="avatar">Ảnh đại diện:</label>
+            <input type="file" id="avatar" (change)="onFileChange($event)" />
+        </div>
+
+        <!-- Nút cập nhật và hủy -->
+        <div class="form-actions">
+            <button type="submit" class="action-btn">Cập nhật</button>
+            <button type="button" class="cancel-btn" (click)="goToMovieList()">Hủy</button>
+        </div>
+    </form>
+</div>

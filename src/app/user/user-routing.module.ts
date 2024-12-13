@@ -2,35 +2,35 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 //customer
-import { CustomerListComponent } from './admin/customer/customer-list/customer-list.component';
-import { CreateCustomerComponent } from './admin/customer/create-customer/create-customer.component';
-import { UpdateCustomerComponent } from './admin/customer/update-customer/update-customer.component';
-import { CustomerDetailsComponent } from './admin/customer/customer-details/customer-details.component';
+import { CustomerListComponent } from '../admin/customer/customer-list/customer-list.component';
+import { CreateCustomerComponent } from '../admin/customer/create-customer/create-customer.component';
+import { UpdateCustomerComponent } from '../admin/customer/update-customer/update-customer.component';
+import { CustomerDetailsComponent } from '../admin/customer/customer-details/customer-details.component';
 // theater
 
-import { TheaterListComponent } from './admin/theaters/theater-list/theater-list.component';
-import { TheaterDetailsComponent } from './admin/theaters/theater-details/theater-details.component';
-import { CreateTheaterComponent } from './admin/theaters/create-theater/create-theater.component';
-import { UpdateTheaterComponent } from './admin/theaters/update-theater/update-theater.component';
+import { TheaterListComponent } from '../admin/theaters/theater-list/theater-list.component';
+import { TheaterDetailsComponent } from '../admin/theaters/theater-details/theater-details.component';
+import { CreateTheaterComponent } from '../admin/theaters/create-theater/create-theater.component';
+import { UpdateTheaterComponent } from '../admin/theaters/update-theater/update-theater.component';
 
 
-import { HomeComponent } from './admin/home/home.component';
-import { RoomListComponent } from './admin/rooms/room-list/room-list.component';
-import { CreateRoomComponent } from './admin/rooms/create-room/create-room.component';
-import { UpdateRoomComponent } from './admin/rooms/update-room/update-room.component';
-import { RoomDetailsComponent } from './admin/rooms/room-details/room-details.component';
-import { SeatListComponent } from './admin/seats/seat-list/seat-list.component';
-import { CreateSeatComponent } from './admin/seats/create-seat/create-seat.component';
-import { UpdateSeatComponent } from './admin/seats/update-seat/update-seat.component';
-import { SeatDetailsComponent } from './admin/seats/seat-details/seat-details.component';
-import { MovieListComponent } from './admin/movies/movie-list/movie-list.component';
-import { CreateMovieComponent } from './admin/movies/create-movie/create-movie.component';
-import { UpdateMovieComponent } from './admin/movies/update-movie/update-movie.component';
-import { MovieDetailsComponent } from './admin/movies/movie-details/movie-details.component';
-import { MoviesClientComponent } from './user/movies-client/movies-client.component';
-import { CreateTicketComponent } from './admin/tickets/create-ticket/create-ticket.component';
-import { TicketDetailsComponent } from './admin/tickets/ticket-details/ticket-details.component';
-import { LoginComponent } from './login/login.component';
+import { HomeComponent } from '../admin/home/home.component';
+import { RoomListComponent } from '../admin/rooms/room-list/room-list.component';
+import { CreateRoomComponent } from '../admin/rooms/create-room/create-room.component';
+import { UpdateRoomComponent } from '../admin/rooms/update-room/update-room.component';
+import { RoomDetailsComponent } from '../admin/rooms/room-details/room-details.component';
+import { SeatListComponent } from '../admin/seats/seat-list/seat-list.component';
+import { CreateSeatComponent } from '../admin/seats/create-seat/create-seat.component';
+import { UpdateSeatComponent } from '../admin/seats/update-seat/update-seat.component';
+import { SeatDetailsComponent } from '../admin/seats/seat-details/seat-details.component';
+import { MovieListComponent } from '../admin/movies/movie-list/movie-list.component';
+import { CreateMovieComponent } from '../admin/movies/create-movie/create-movie.component';
+import { UpdateMovieComponent } from '../admin/movies/update-movie/update-movie.component';
+import { MovieDetailsComponent } from '../admin/movies/movie-details/movie-details.component';
+import { MoviesClientComponent } from '../user/movies-client/movies-client.component';
+import { CreateTicketComponent } from '../admin/tickets/create-ticket/create-ticket.component';
+import { TicketDetailsComponent } from '../admin/tickets/ticket-details/ticket-details.component';
+import { LoginComponent } from '../login/login.component';
 
 const routes: Routes = [
 
@@ -90,4 +90,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class UserRoutingModule { }

@@ -11,7 +11,7 @@ import { MovieService } from '../../services/movie.service';
 export class MoviesClientComponent implements OnInit {
 
   movies!: Movie[];
-upcomingMovies: Movie[] | undefined;
+  upcomingMovies: Movie[] | undefined;
 
   constructor( private movieService: MovieService, private router: Router) {}
 

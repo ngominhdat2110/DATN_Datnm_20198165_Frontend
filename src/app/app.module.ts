@@ -3,16 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CustomerListComponent } from './components/customer/customer-list/customer-list.component';
+import { CustomerListComponent } from './admin/customer/customer-list/customer-list.component';
 import { HttpClientModule } from '@angular/common/http';
-import { CreateCustomerComponent } from './components/customer/create-customer/create-customer.component';
+import { CreateCustomerComponent } from './admin/customer/create-customer/create-customer.component';
 import { FormsModule } from '@angular/forms';
-import { UpdateCustomerComponent } from './components/customer/update-customer/update-customer.component';
-import { CustomerDetailsComponent } from './components/customer/customer-details/customer-details.component';
-import { HeaderComponent } from './header/header.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { HomeComponent } from './home/home.component';
-// import { DashboardComponent } from './dashboard/dashboard.component';
+import { UpdateCustomerComponent } from './admin/customer/update-customer/update-customer.component';
+import { CustomerDetailsComponent } from './admin/customer/customer-details/customer-details.component';
+import { HeaderComponent } from './admin/header/header.component';
+import { SidenavComponent } from './admin/sidenav/sidenav.component';
+import { HomeComponent } from './admin/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -25,28 +24,33 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { CreateTheaterComponent } from './components/theaters/create-theater/create-theater.component';
-import { TheaterDetailsComponent } from './components/theaters/theater-details/theater-details.component';
-import { TheaterListComponent } from './components/theaters/theater-list/theater-list.component';
-import { UpdateTheaterComponent } from './components/theaters/update-theater/update-theater.component';
-import { CreateRoomComponent } from './components/rooms/create-room/create-room.component';
-import { UpdateRoomComponent } from './components/rooms/update-room/update-room.component';
-import { RoomDetailsComponent } from './components/rooms/room-details/room-details.component';
-import { RoomListComponent } from './components/rooms/room-list/room-list.component';
-import { CreateSeatComponent } from './components/seats/create-seat/create-seat.component';
-import { SeatDetailsComponent } from './components/seats/seat-details/seat-details.component';
-import { SeatListComponent } from './components/seats/seat-list/seat-list.component';
-import { UpdateSeatComponent } from './components/seats/update-seat/update-seat.component';
-import { CreateMovieComponent } from './components/movies/create-movie/create-movie.component';
-import { MovieDetailsComponent } from './components/movies/movie-details/movie-details.component';
-import { MovieListComponent } from './components/movies/movie-list/movie-list.component';
-import { UpdateMovieComponent } from './components/movies/update-movie/update-movie.component';
+import { CreateTheaterComponent } from './admin/theaters/create-theater/create-theater.component';
+import { TheaterDetailsComponent } from './admin/theaters/theater-details/theater-details.component';
+import { TheaterListComponent } from './admin/theaters/theater-list/theater-list.component';
+import { UpdateTheaterComponent } from './admin/theaters/update-theater/update-theater.component';
+import { CreateRoomComponent } from './admin/rooms/create-room/create-room.component';
+import { UpdateRoomComponent } from './admin/rooms/update-room/update-room.component';
+import { RoomDetailsComponent } from './admin/rooms/room-details/room-details.component';
+import { RoomListComponent } from './admin/rooms/room-list/room-list.component';
+import { CreateSeatComponent } from './admin/seats/create-seat/create-seat.component';
+import { SeatDetailsComponent } from './admin/seats/seat-details/seat-details.component';
+import { SeatListComponent } from './admin/seats/seat-list/seat-list.component';
+import { UpdateSeatComponent } from './admin/seats/update-seat/update-seat.component';
+import { CreateMovieComponent } from './admin/movies/create-movie/create-movie.component';
+import { MovieDetailsComponent } from './admin/movies/movie-details/movie-details.component';
+import { MovieListComponent } from './admin/movies/movie-list/movie-list.component';
+import { UpdateMovieComponent } from './admin/movies/update-movie/update-movie.component';
 
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
-import { MoviesClientComponent } from './components/movies-client/movies-client.component';
-import { CreateTicketComponent } from './components/tickets/create-ticket/create-ticket.component';
-import { TicketDetailsComponent } from './components/tickets/ticket-details/ticket-details.component';
-import { LoginComponent } from './components/login/login.component';
+import { MoviesClientComponent } from './user/movies-client/movies-client.component';
+import { CreateTicketComponent } from './admin/tickets/create-ticket/create-ticket.component';
+import { TicketDetailsComponent } from './admin/tickets/ticket-details/ticket-details.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
+import { UserComponent } from './user/user.component';
+
+import { UserRoutingModule} from './user/user-routing.module';
+import { AdminRoutingModule } from './admin/admin-routing.module';
 
 @NgModule({
   declarations: [
@@ -79,12 +83,15 @@ import { LoginComponent } from './components/login/login.component';
     CreateTicketComponent,
     TicketDetailsComponent   ,
     SafeUrlPipe,
-    LoginComponent   ,
-    // DashboardComponent
+    LoginComponent,
+    AdminComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    UserRoutingModule,
+    AdminRoutingModule,
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,

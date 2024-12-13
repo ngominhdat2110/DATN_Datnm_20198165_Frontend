@@ -30,15 +30,18 @@ import { MovieDetailsComponent } from './components/movies/movie-details/movie-d
 import { MoviesClientComponent } from './components/movies-client/movies-client.component';
 import { CreateTicketComponent } from './components/tickets/create-ticket/create-ticket.component';
 import { TicketDetailsComponent } from './components/tickets/ticket-details/ticket-details.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
+
+  { path: '', component: LoginComponent },
   //{path: "", redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   // {path: 'dashboard', component: DashboardComponent},
 
 
   //customer
-  {path: "", redirectTo: 'customers', pathMatch: 'full'},
+  // {path: "", redirectTo: 'customers', pathMatch: 'full'},
   {path: 'customers', component: CustomerListComponent},
   {path: 'customers/signup', component: CreateCustomerComponent},
   {path: 'customers/update/:id', component: UpdateCustomerComponent},

@@ -46,6 +46,7 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { MoviesClientComponent } from './components/movies-client/movies-client.component';
 import { CreateTicketComponent } from './components/tickets/create-ticket/create-ticket.component';
 import { TicketDetailsComponent } from './components/tickets/ticket-details/ticket-details.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,8 @@ import { TicketDetailsComponent } from './components/tickets/ticket-details/tick
     MoviesClientComponent,
     CreateTicketComponent,
     TicketDetailsComponent   ,
+    SafeUrlPipe,
+    LoginComponent   ,
     // DashboardComponent
   ],
   imports: [

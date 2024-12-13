@@ -1,0 +1,75 @@
+$primary-color: #007bff;
+$secondary-color: #f7f7f7;
+$button-color: #28a745;
+$button-hover-color: #218838;
+$border-radius: 5px;
+
+.ticket-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: $secondary-color;
+  border-radius: $border-radius;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.ticket-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  select,
+  input[type="datetime-local"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: $border-radius;
+    font-size: 14px;
+    outline: none;
+    background-color: white;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+      border-color: $primary-color;
+    }
+  }
+}
+
+.submit-btn {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: $button-color;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $button-hover-color;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}

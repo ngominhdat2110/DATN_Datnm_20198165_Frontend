@@ -1,8 +1,33 @@
 <mat-toolbar>
-    <mat-toolbar-row class="justify-content-between">
+    <mat-toolbar-row >
       <button mat-icon-button (click)="toggleSidebar()">
         <mat-icon>menu</mat-icon>
       </button>
+
+        <!-- Tìm kiếm -->
+        <mat-form-field class="search-field">
+          <mat-label>Tìm kiếm</mat-label>
+          <input matInput placeholder="Tìm kiếm phim..." [(ngModel)]="searchQuery">
+        </mat-form-field>
+  
+        <!-- Danh sách thể loại -->
+        <mat-form-field class="genre-field">
+          <mat-label>Thể loại</mat-label>
+          <mat-select [(value)]="selectedGenre">
+            <mat-option *ngFor="let genre of genres" [value]="genre">{{ genre }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <!-- Danh sách ngôn ngữ -->
+        <mat-form-field class="language-field">
+          <mat-label>Ngôn ngữ</mat-label>
+          <mat-select [(value)]="selectedLanguage">
+            <mat-option *ngFor="let language of languages" [value]="language">{{ language }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+
       <div class="row mr-2 ml-auto">
         <ul class="row m-0 align-items-center">
           <li>
@@ -18,6 +43,7 @@
                 >keyboard_arrow_down</mat-icon
               >
             </button>
+
             <mat-menu #menu="matMenu">
               <button mat-menu-item>
                 <mat-icon>exit_to_app</mat-icon>

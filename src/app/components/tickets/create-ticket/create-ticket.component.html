@@ -1,0 +1,47 @@
+<div class="ticket-container">
+    <h2 class="ticket-title">Đặt Vé Xem Phim</h2>
+  
+    <form (ngSubmit)="onSubmit()" class="ticket-form">
+      <!-- Chọn Phim -->
+      <div class="form-group">
+        <label for="movie">Chọn Phim</label>
+        <select id="movie" [(ngModel)]="ticket.movieId" name="movieId" required>
+          <option *ngFor="let movie of movies" [value]="movie.id">{{ movie.name }}</option>
+        </select>
+      </div>
+  
+      <!-- Chọn Rạp -->
+      <div class="form-group">
+        <label for="theater">Chọn Rạp</label>
+        <select id="theater" [(ngModel)]="ticket.theaterId" name="theaterId" required>
+          <option *ngFor="let theater of theaters" [value]="theater.id">{{ theater.name }}</option>
+        </select>
+      </div>
+  
+      <!-- Chọn Phòng Chiếu -->
+      <div class="form-group">
+        <label for="room">Chọn Phòng Chiếu</label>
+        <select id="room" [(ngModel)]="ticket.roomId" name="roomId" required>
+          <option *ngFor="let room of rooms" [value]="room.id">{{ room.name }}</option>
+        </select>
+      </div>
+  
+      <!-- Chọn Ghế -->
+      <div class="form-group">
+        <label for="seat">Chọn Ghế</label>
+        <select id="seat" [(ngModel)]="ticket.seatId" name="seatId" required>
+          <option *ngFor="let seat of seats" [value]="seat.id">{{ seat.name }}</option>
+        </select>
+      </div>
+  
+      <!-- Chọn Thời Gian -->
+      <div class="form-group">
+        <label for="time">Chọn Thời Gian</label>
+        <input id="time" type="datetime-local" [(ngModel)]="ticket.time" name="time" required />
+      </div>
+  
+      <!-- Nút Đặt Vé -->
+      <button type="submit" class="submit-btn">Đặt Vé</button>
+    </form>
+  </div>
+  

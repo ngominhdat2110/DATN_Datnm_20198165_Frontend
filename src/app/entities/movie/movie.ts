@@ -9,6 +9,6 @@ export class Movie {
     rated!: string;
     detail!: string;
     status!: number;
-    avatar!: Blob;  // Không cần thay đổi ở đây
+    avatar!: Blob;
     trailer!: string;
 }

@@ -27,6 +27,9 @@ import { MovieListComponent } from './components/movies/movie-list/movie-list.co
 import { CreateMovieComponent } from './components/movies/create-movie/create-movie.component';
 import { UpdateMovieComponent } from './components/movies/update-movie/update-movie.component';
 import { MovieDetailsComponent } from './components/movies/movie-details/movie-details.component';
+import { MoviesClientComponent } from './components/movies-client/movies-client.component';
+import { CreateTicketComponent } from './components/tickets/create-ticket/create-ticket.component';
+import { TicketDetailsComponent } from './components/tickets/ticket-details/ticket-details.component';
 
 const routes: Routes = [
   //{path: "", redirectTo: 'home', pathMatch: 'full'},
@@ -68,6 +71,16 @@ const routes: Routes = [
   {path: "movies/create", component: CreateMovieComponent},
   {path: "movies/update/:id", component: UpdateMovieComponent},
   {path: "movies/:id", component: MovieDetailsComponent},
+
+  //movie_client
+  // {path: "", redirectTo: 'movies-client', pathMatch: 'full'},
+  {path: "movies-client", component: MoviesClientComponent},
+
+  //tickets
+  {path: "", redirectTo: 'tickets', pathMatch: 'full'},
+  {path: "tickets", component: CreateTicketComponent},
+  // {path: "movies/update/:id", component: UpdateMovieComponent},
+  {path: "tickets/:id", component: TicketDetailsComponent},
 ];
 
 @NgModule({

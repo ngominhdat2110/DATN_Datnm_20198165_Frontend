@@ -45,4 +45,14 @@ export class MovieService {
     return this.httpClient.delete(`${this.baseURL}/${id}`);
   }
 
+
+  //client
+  getAllMoviesNowShowing(): Observable<Movie[]>{
+    return this.httpClient.get<Movie[]>(`${this.baseURL}/now-showing`);
+  }
+
+  getAllMoviesUpComing(): Observable<Movie[]>{
+    return this.httpClient.get<Movie[]>(`${this.baseURL}/up-coming`);
+  }
+
 }

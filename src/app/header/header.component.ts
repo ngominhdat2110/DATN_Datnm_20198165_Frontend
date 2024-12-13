@@ -17,14 +17,18 @@ import { Router } from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit {
-  @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
+export class HeaderComponent {
+  // Các mảng thể loại và ngôn ngữ
+  genres = ['Hành động', 'Hài hước', 'Kinh dị', 'Lãng mạn', 'Hoạt hình'];
+  languages = ['Tiếng Việt', 'Tiếng Anh', 'Tiếng Hàn', 'Tiếng Nhật'];
 
-  constructor(private router: Router) {}
+  // Biến lưu giá trị tìm kiếm và thể loại, ngôn ngữ đã chọn
+  searchQuery: string = '';
+  selectedGenre: string = '';
+  selectedLanguage: string = '';
 
-  ngOnInit(): void {}
-
+  // Hàm gọi khi mở sidebar
   toggleSidebar() {
-    this.toggleSidebarForMe.emit();
+    // Logic mở sidebar nếu có
   }
 }

@@ -1,0 +1,30 @@
+<div class="movie-list-title">Phim Đang Chiếu</div> <!-- Tiêu đề ở trên cùng -->
+
+<div class="movie-list">
+  <!-- Cột trái: Phim Đang Chiếu -->
+  <div class="movie-list-left">
+    <div *ngFor="let movie of movies" class="movie-card">
+      <a [routerLink]="['/movies', movie.id]"> <!-- Thêm đường dẫn khi nhấn vào hình ảnh -->
+        <img [src]="'data:image/png;base64,' + movie.avatar" alt="{{ movie.name }}" class="movie-avatar" loading="lazy">
+      </a>
+      <div class="movie-info">
+        <h3>{{ movie.name }}</h3>
+        <p><strong>Genre:</strong> {{ movie.genre }}</p>
+        <p><strong>Duration:</strong> {{ movie.duration }}</p>
+        <p><strong>Release Date:</strong> {{ movie.releaseDate | date:'dd/MM/yyyy' }}</p>
+      </div>
+      <button class="buy-ticket-btn" (click)="buyTicket(movie)">Mua Vé</button> <!-- Nút Mua Vé -->
+    </div>
+  </div>
+
+  <!-- Cột phải: Phim Sắp Chiếu -->
+  <div class="movie-list-right">
+    <div class="movie-upcoming-title">PHIM SẮP CHIẾU</div>
+    <div *ngFor="let movie of upcomingMovies" class="upcoming-movie-card">
+      <a [routerLink]="['/movies', movie.id]">
+        <img [src]="'data:image/png;base64,' + movie.avatar" alt="{{ movie.name }}" class="upcoming-movie-avatar" loading="lazy">
+        <h4 class="upcoming-movie-title">{{ movie.name }}</h4>
+      </a>
+    </div>
+  </div>
+</div>

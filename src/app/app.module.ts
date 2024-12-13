@@ -20,6 +20,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CreateTheaterComponent } from './components/theaters/create-theater/create-theater.component';
 import { TheaterDetailsComponent } from './components/theaters/theater-details/theater-details.component';
@@ -39,6 +43,9 @@ import { MovieListComponent } from './components/movies/movie-list/movie-list.co
 import { UpdateMovieComponent } from './components/movies/update-movie/update-movie.component';
 
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
+import { MoviesClientComponent } from './components/movies-client/movies-client.component';
+import { CreateTicketComponent } from './components/tickets/create-ticket/create-ticket.component';
+import { TicketDetailsComponent } from './components/tickets/ticket-details/ticket-details.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +73,10 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
     MovieDetailsComponent,
     MovieListComponent,
     UpdateMovieComponent,
-    SafeUrlPipe   ,
+    SafeUrlPipe,
+    MoviesClientComponent,
+    CreateTicketComponent,
+    TicketDetailsComponent   ,
     // DashboardComponent
   ],
   imports: [
@@ -82,7 +92,11 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
     MatMenuModule,
     MatIconModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     provideAnimationsAsync()

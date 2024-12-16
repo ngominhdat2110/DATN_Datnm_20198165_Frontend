@@ -22,6 +22,8 @@ export class CreateTicketComponent implements OnInit {
   rooms!: Room[];
   seats!: Seat[];
 
+  seat!: Seat;
+
   ticket: Ticket = new Ticket();
   
   constructor(private ticketService : TicketService,
@@ -57,6 +59,10 @@ export class CreateTicketComponent implements OnInit {
       this.movies = data;
     });
   }
+
+  toggleSeat(seat: { selected: boolean; }) {
+    seat.selected = !seat.selected; // Chuyển đổi trạng thái chọn
+}
 
   saveTicket() {
     this.ticketService.createTicket(this.ticket).subscribe( {

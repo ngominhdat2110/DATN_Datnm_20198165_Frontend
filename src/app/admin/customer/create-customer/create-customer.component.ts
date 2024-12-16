@@ -27,7 +27,7 @@ export class CreateCustomerComponent implements OnInit{
   }
 
   goToCustomerList() {
-    this.router.navigate(['/customers']);
+    this.router.navigate(['/admin/customers']);
   }
 
   onSubmit(){

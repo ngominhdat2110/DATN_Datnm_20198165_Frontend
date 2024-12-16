@@ -25,15 +25,15 @@ export class MovieListComponent implements OnInit {
   }
 
   createMovie() {
-    this.router.navigate(['movies/create'])
+    this.router.navigate(['admin/movies/create'])
   }
 
   updateMovie(id: number) {
-    this.router.navigate(['movies/update', id]);
+    this.router.navigate(['admin/movies/update', id]);
   }
 
   movieDetail(id: number) {
-    this.router.navigate(['movies', id]);
+    this.router.navigate(['admin/movies', id]);
   }
 
   deleteMovie(id: number) {

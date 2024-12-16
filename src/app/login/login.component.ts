@@ -23,9 +23,9 @@ export class LoginComponent {
         console.log('Phản hồi từ server:', response);  // Xem phản hồi thực tế từ server
         const role = response.role;
         if (role === 'admin') {
-          this.router.navigate(['/movies']);
-        } else if (role === 'user') {
           this.router.navigate(['/customers']);
+        } else if (role === 'user') {
+          this.router.navigate(['/movies-client']);
         }
       },
       error: (err) => {

@@ -15,7 +15,7 @@
             <form (ngSubmit)="onSubmit()">
                 <div class="user-details">
                     <div class="input-box">
-                        <span class="details">Full Name</span>
+                        <span class="details">Họ và tên</span>
                         <input type="text" id="form3Example1c" class="form-control" id="fullName"
                             [(ngModel)]="customer.fullName" name="fullName" placeholder="Enter your name" required />
                     </div>
@@ -30,19 +30,19 @@
                             [(ngModel)]="customer.email" name="email" placeholder="Enter your email" required />
                     </div>
                     <div class="input-box">
-                        <span class="details">Phone Number</span>
+                        <span class="details">Số điện thoại</span>
                         <input type="text" id="form3Example4c" class="form-control" id="phoneNumber"
                             [(ngModel)]="customer.phoneNumber" name="phoneNumber" placeholder="Enter your number"
                             required />
                     </div>
                     <div class="input-box">
-                        <span class="details">Password</span>
+                        <span class="details">Mật khẩu</span>
                         <input type="password" id="form3Example4c" class="form-control" id="password"
                             [(ngModel)]="customer.password" name="password" placeholder="Enter your password"
                             required />
                     </div>
                     <div class="input-box">
-                        <span class="details">Confirm Password</span>
+                        <span class="details">Xác nhận mật khẩu</span>
                         <input type="password" id="form3Example4c" class="form-control" id="password"
                             [(ngModel)]="customer.password" name="password" placeholder="Confirm your password"
                             required />
@@ -52,19 +52,19 @@
                     <input type="radio" name="gender" id="dot-1" [(ngModel)]="customer.gender" value="Nam">
                     <input type="radio" name="gender" id="dot-2" [(ngModel)]="customer.gender" value="Nữ">
                     <input type="radio" name="gender" id="dot-3" [(ngModel)]="customer.gender" value="Khác">
-                    <span class="gender-title">Gender</span>
+                    <span class="gender-title">Giới tính</span>
                     <div class="category" [(ngModel)]="customer.gender">
                         <label for="dot-1">
                             <span class="dot one"></span>
-                            <span class="gender">Male</span>
+                            <span class="gender">Nam</span>
                         </label>
                         <label for="dot-2">
                             <span class="dot two"></span>
-                            <span class="gender">Female</span>
+                            <span class="gender">Nữ</span>
                         </label>
                         <label for="dot-3">
                             <span class="dot three"></span>
-                            <span class="gender">Prefer not to say</span>
+                            <span class="gender">Giới tính khác</span>
                         </label>
                     </div>
                 </div>

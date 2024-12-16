@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 //customer
@@ -29,59 +29,69 @@ import { MovieDetailsComponent } from './movies/movie-details/movie-details.comp
 import { CreateTicketComponent } from './tickets/create-ticket/create-ticket.component';
 import { TicketDetailsComponent } from './tickets/ticket-details/ticket-details.component';
 import { LoginComponent } from '../login/login.component';
+import { AdminComponent } from './admin.component';
 
 const routes: Routes = [
 
-  { path: '', component: LoginComponent },
+  {
+    path: '', component: AdminComponent,
+  
   //{path: "", redirectTo: 'home', pathMatch: 'full'},
+
+  children: [
+
+    { path: 'login', component: LoginComponent },
+
   {path: 'home', component: HomeComponent},
   // {path: 'dashboard', component: DashboardComponent},
 
 
   //customer
   {path: "", redirectTo: 'customers', pathMatch: 'full'},
-  {path: 'customers', component: CustomerListComponent},
-  {path: 'customers/signup', component: CreateCustomerComponent},
-  {path: 'customers/update/:id', component: UpdateCustomerComponent},
-  {path: 'customers/:id', component: CustomerDetailsComponent},
+  {path: 'admin/customers', component: CustomerListComponent},
+  {path: 'admin/customers/create', component: CreateCustomerComponent},
+  {path: 'admin/customers/update/:id', component: UpdateCustomerComponent},
+  {path: 'admin/customers/:id', component: CustomerDetailsComponent},
 
   //theater
   {path: "", redirectTo: 'theaters', pathMatch: 'full'},
-  {path: "theaters", component: TheaterListComponent},
-  {path: "theaters", component: CreateTheaterComponent},
-  {path: "theaters/update/:id", component: UpdateTheaterComponent},
-  {path: "theaters/:id", component: TheaterDetailsComponent},
+  {path: "admin/theaters", component: TheaterListComponent},
+  {path: "admin/theaters", component: CreateTheaterComponent},
+  {path: "admin/theaters/update/:id", component: UpdateTheaterComponent},
+  {path: "admin/theaters/:id", component: TheaterDetailsComponent},
 
   //room
   {path: "", redirectTo: 'rooms', pathMatch: 'full'},
-  {path: "rooms", component: RoomListComponent},
-  {path: "rooms", component: CreateRoomComponent},
-  {path: "rooms/update/:id", component: UpdateRoomComponent},
-  {path: "rooms/:id", component: RoomDetailsComponent},
+  {path: "admin/rooms", component: RoomListComponent},
+  {path: "admin/rooms", component: CreateRoomComponent},
+  {path: "admin/rooms/update/:id", component: UpdateRoomComponent},
+  {path: "admin/rooms/:id", component: RoomDetailsComponent},
 
   //seat
   {path: "", redirectTo: 'seats', pathMatch: 'full'},
-  {path: "seats", component: SeatListComponent},
-  {path: "seats", component: CreateSeatComponent},
-  {path: "seats/update/:id", component: UpdateSeatComponent},
-  {path: "seats/:id", component: SeatDetailsComponent},
+  {path: "admin/seats", component: SeatListComponent},
+  {path: "admin/seats", component: CreateSeatComponent},
+  {path: "admin/seats/update/:id", component: UpdateSeatComponent},
+  {path: "admin/seats/:id", component: SeatDetailsComponent},
 
   //movie
-  {path: "", redirectTo: 'movies', pathMatch: 'full'},
-  {path: "movies", component: MovieListComponent},
-  {path: "movies/create", component: CreateMovieComponent},
-  {path: "movies/update/:id", component: UpdateMovieComponent},
-  {path: "movies/:id", component: MovieDetailsComponent},
+  {path: "", redirectTo: 'admin/movies', pathMatch: 'full'},
+  {path: "admin/movies", component: MovieListComponent},
+  {path: "admin/movies/create", component: CreateMovieComponent},
+  {path: "admin/movies/update/:id", component: UpdateMovieComponent},
+  {path: "admin/movies/:id", component: MovieDetailsComponent},
 
   //tickets
   {path: "", redirectTo: 'tickets', pathMatch: 'full'},
-  {path: "tickets", component: CreateTicketComponent},
+  {path: "admin/tickets", component: CreateTicketComponent},
   // {path: "movies/update/:id", component: UpdateMovieComponent},
-  {path: "tickets/:id", component: TicketDetailsComponent},
+  {path: "admin/tickets/:id", component: TicketDetailsComponent},
+
+]}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class AdminRoutingModule { }

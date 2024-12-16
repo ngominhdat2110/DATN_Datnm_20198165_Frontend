@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'admin-panel-layout';
-  sideBarOpen = true;
+  // title = 'admin-panel-layout';
+  // sideBarOpen = true;
 
-  sideBarToggler() {
-    this.sideBarOpen = !this.sideBarOpen;
-  }
+  // sideBarToggler() {
+  //   this.sideBarOpen = !this.sideBarOpen;
+  // }
 }

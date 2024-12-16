@@ -33,7 +33,7 @@ export class CreateMovieComponent implements OnInit {
 
   // Điều hướng tới danh sách các bộ phim
   goToMovieList() {
-    this.router.navigate(['/movies']);
+    this.router.navigate(['/admin/movies']);
   }
 
   // Hàm gửi form khi người dùng nhấn nút submit

@@ -51,6 +51,8 @@ import { UserComponent } from './user/user.component';
 
 import { UserRoutingModule} from './user/user-routing.module';
 import { AdminRoutingModule } from './admin/admin-routing.module';
+import { NavbarComponent } from './user/navbar/navbar.component';
+import { FooterComponent } from './user/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -86,6 +88,8 @@ import { AdminRoutingModule } from './admin/admin-routing.module';
     LoginComponent,
     AdminComponent,
     UserComponent,
+    NavbarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -95,7 +99,6 @@ import { AdminRoutingModule } from './admin/admin-routing.module';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-
     // * MATERIAL IMPORTS
     MatSidenavModule,
     MatToolbarModule,
@@ -106,8 +109,8 @@ import { AdminRoutingModule } from './admin/admin-routing.module';
     MatButtonModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatInputModule
-  ],
+    MatInputModule,
+],
   providers: [
     provideAnimationsAsync()
   ],

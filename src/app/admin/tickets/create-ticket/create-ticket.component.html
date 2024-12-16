@@ -11,34 +11,67 @@
       </div>
   
       <!-- Chọn Rạp -->
-      <div class="form-group">
+
+      <!-- <div class="form-group">
         <label for="theater">Chọn Rạp</label>
         <select id="theater" [(ngModel)]="ticket.theaterId" name="theaterId" required>
           <option *ngFor="let theater of theaters" [value]="theater.id">{{ theater.name }}</option>
         </select>
+      </div> -->
+
+      <div class="form-group">
+        <label for="theater">Chọn Rạp</label>
+        <div class="theater-options">
+            <div *ngFor="let theater of theaters" class="theater-card" (click)="ticket.theaterId = theater.id">
+                <img [src]="theater.avatar" alt="{{ theater.name }}" />
+                <h3>{{ theater.name }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="form-group">
+      <label>Chọn Rạp</label>
+      <div *ngFor="let theater of theaters">
+          <input type="radio" [(ngModel)]="ticket.theaterId" [value]="theater.id" id="{{theater.id}}" />
+          <label for="{{theater.id}}">{{ theater.name }}</label>
       </div>
+  </div> -->
+
+  <!-- Chọn suất chiếu -> hiển thị thông tin phòng chiếu, giờ chiếu, thứ ngày tháng -->
   
       <!-- Chọn Phòng Chiếu -->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="room">Chọn Phòng Chiếu</label>
         <select id="room" [(ngModel)]="ticket.roomId" name="roomId" required>
           <option *ngFor="let room of rooms" [value]="room.id">{{ room.name }}</option>
         </select>
-      </div>
+      </div> -->
   
       <!-- Chọn Ghế -->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="seat">Chọn Ghế</label>
         <select id="seat" [(ngModel)]="ticket.seatId" name="seatId" required>
           <option *ngFor="let seat of seats" [value]="seat.id">{{ seat.name }}</option>
         </select>
-      </div>
+      </div> -->
+
+      <div class="form-group">
+        <label for="seats">Chọn Ghế</label>
+        <div class="seat-selection">
+            <div *ngFor="let seat of seats" 
+                 class="seat-button" 
+                 [class.selected]="seat.selected" 
+                 (click)="toggleSeat(seat)">
+                {{ seat.name }}
+            </div>
+        </div>
+    </div>
   
       <!-- Chọn Thời Gian -->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="time">Chọn Thời Gian</label>
         <input id="time" type="datetime-local" [(ngModel)]="ticket.time" name="time" required />
-      </div>
+      </div> -->
   
       <!-- Nút Đặt Vé -->
       <button type="submit" class="submit-btn">Đặt Vé</button>

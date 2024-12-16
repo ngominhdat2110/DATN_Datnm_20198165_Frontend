@@ -23,7 +23,7 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   goToMovieList() {
-    this.router.navigate(['/movies']);
+    this.router.navigate(['/admin/movies']);
   }
 
 }

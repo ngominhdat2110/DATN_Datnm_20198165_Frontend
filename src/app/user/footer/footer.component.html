@@ -1,0 +1,12 @@
+<footer class="footer">
+    <div>Developed by <span class="footer__datnm">Datnm</span></div>
+    <a *ngFor="let social of socialData" [href]="social.url"
+       target="_blank" rel="noopener noreferrer"
+       [attr.aria-label]="'Ngô Minh Đạt ' + social.name"
+       [title]="social.name"
+       class="footer__social"
+    >
+    <img [src]="social.img" [alt]="'Angular Movies ' + social.name">
+      <!-- <img [ngSrc]="social.img" [alt]="'Angular Movies '  + social.name" loading="lazy" [height]="24" [width]="24"> -->
+    </a>
+  </footer>

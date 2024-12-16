@@ -3,4 +3,5 @@ export class Theater {
     name!: string;
     address!: string;
     // status!: string
+    avatar!: Blob;
 }

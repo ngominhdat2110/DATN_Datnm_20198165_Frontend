@@ -4,6 +4,38 @@ $button-color: #28a745;
 $button-hover-color: #218838;
 $border-radius: 5px;
 
+.theater-card:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+}
+
+.seat-selection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.seat-button {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.seat-button:hover {
+  background-color: #e0e0e0;
+}
+
+.seat-button.selected {
+  background-color: #4caf50; /* Màu xanh cho ghế đã chọn */
+  color: white;
+  border: 1px solid #388e3c; /* Đường viền màu xanh đậm */
+}
+
 .ticket-container {
   max-width: 600px;
   margin: 0 auto;

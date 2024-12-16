@@ -1,0 +1,29 @@
+<header class="navbar__container" [class.colored__scrolled]="isScrolled"> <!-- thẻ chứa cho thanh điều hướng -->
+
+    <nav class="navbar__nav container">   <!-- Thẻ nav chứa các liên kết và các phần tử điều hướng khác -->
+      <a [routerLink]="'/'" class="flex-start navbar__logo">  <!-- Liên kết đến trang chủ (routerLink="/") -->
+        <!-- <img [ngSrc]="'assets/img/logo.webp'" alt="Movies + TV Shows by JancoBH" width="144" height="36" [priority]="true"> -->
+      </a>
+      <div class="navbar__list">
+        <a mat-button [routerLink]="''" [routerLinkActive]="['activated-route']" [routerLinkActiveOptions]="{exact: true}" aria-label="Home">Home</a>
+        <a mat-button [routerLink]="''" [routerLinkActive]="['activated-route']" aria-label="Movies">Movies</a>
+        <a mat-button [routerLink]="''" [routerLinkActive]="['activated-route']" aria-label="TV Shows">TV Shows</a>
+        <!-- routerLinkActive dùng để thêm lớp activated-route cho liên kết hiện tại, giúp người dùng nhận biết họ đang ở trang nào -->
+  
+        <!-- <button mat-icon-button [matMenuTriggerFor]="menu" title="Change Color" aria-label="Change Color">
+          <mat-icon>format_color_fill</mat-icon>
+        </button> -->
+  
+        <!-- <mat-menu #menu="matMenu">
+          <div *ngFor="let theme of themeColorList" [class.hidden]="themeColorInit === theme.color" [attr.aria-label]="'Color ' + theme.name">
+            <button mat-menu-item (click)="setColorTheme(theme.color)">
+              <mat-icon [style.color]="theme.color" aria-hidden="false" aria-label="Color Selector Icon" fontIcon="lens"></mat-icon>
+              <span>{{theme.name}}</span>
+            </button>
+          </div>
+        </mat-menu> -->
+      </div>
+    </nav>
+  
+  </header>
+  

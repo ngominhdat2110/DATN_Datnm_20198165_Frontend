@@ -3,6 +3,28 @@ mat-toolbar {
     top: 0;
     z-index: 100;
   }
+
+  .navbar__container {
+    width: 100%;
+    background-color: rgba(0,0,0,0);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .4s;
+    z-index: 100;
+  
+    @media (max-width: 576px) {
+      // @media (max-width: $breakpoint-xs) {
+      position: static;
+      background: #212121;
+    }
+  }
+
+  .colored__scrolled {
+    background-color: #212121;
+    transition: .4s;
+  }
+
   
   ul {
     li {

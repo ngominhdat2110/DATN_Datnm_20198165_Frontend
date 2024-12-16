@@ -31,48 +31,54 @@ import { MoviesClientComponent } from '../user/movies-client/movies-client.compo
 import { CreateTicketComponent } from '../admin/tickets/create-ticket/create-ticket.component';
 import { TicketDetailsComponent } from '../admin/tickets/ticket-details/ticket-details.component';
 import { LoginComponent } from '../login/login.component';
+import { UserComponent } from './user.component';
 
 const routes: Routes = [
 
-  { path: '', component: LoginComponent },
-  //{path: "", redirectTo: 'home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  // {path: 'dashboard', component: DashboardComponent},
+  {
+      path: '', component: UserComponent,
+  
+    children: [
+
+  { path: 'login', component: LoginComponent },
+  // //{path: "", redirectTo: 'home', pathMatch: 'full'},
+  // {path: 'home', component: HomeComponent},
+  // // {path: 'dashboard', component: DashboardComponent},
 
 
   //customer
-  {path: "", redirectTo: 'customers', pathMatch: 'full'},
-  {path: 'customers', component: CustomerListComponent},
-  {path: 'customers/signup', component: CreateCustomerComponent},
-  {path: 'customers/update/:id', component: UpdateCustomerComponent},
+  // {path: "", redirectTo: 'customers', pathMatch: 'full'},
+  // {path: 'customers', component: CustomerListComponent},
+  // {path: 'customers/signup', component: CreateCustomerComponent},
+  // {path: 'customers/update/:id', component: UpdateCustomerComponent},
   {path: 'customers/:id', component: CustomerDetailsComponent},
 
   //theater
-  {path: "", redirectTo: 'theaters', pathMatch: 'full'},
+  // {path: "", redirectTo: 'theaters', pathMatch: 'full'},
   {path: "theaters", component: TheaterListComponent},
-  {path: "theaters", component: CreateTheaterComponent},
-  {path: "theaters/update/:id", component: UpdateTheaterComponent},
+  // {path: "theaters", component: CreateTheaterComponent},
+  // {path: "theaters/update/:id", component: UpdateTheaterComponent},
   {path: "theaters/:id", component: TheaterDetailsComponent},
 
   //room
-  {path: "", redirectTo: 'rooms', pathMatch: 'full'},
+  // {path: "", redirectTo: 'rooms', pathMatch: 'full'},
   {path: "rooms", component: RoomListComponent},
-  {path: "rooms", component: CreateRoomComponent},
-  {path: "rooms/update/:id", component: UpdateRoomComponent},
+  // {path: "rooms", component: CreateRoomComponent},
+  // {path: "rooms/update/:id", component: UpdateRoomComponent},
   {path: "rooms/:id", component: RoomDetailsComponent},
 
   //seat
-  {path: "", redirectTo: 'seats', pathMatch: 'full'},
+  // {path: "", redirectTo: 'seats', pathMatch: 'full'},
   {path: "seats", component: SeatListComponent},
-  {path: "seats", component: CreateSeatComponent},
-  {path: "seats/update/:id", component: UpdateSeatComponent},
+  // {path: "seats", component: CreateSeatComponent},
+  // {path: "seats/update/:id", component: UpdateSeatComponent},
   {path: "seats/:id", component: SeatDetailsComponent},
 
-  //movie
-  {path: "", redirectTo: 'movies', pathMatch: 'full'},
-  {path: "movies", component: MovieListComponent},
-  {path: "movies/create", component: CreateMovieComponent},
-  {path: "movies/update/:id", component: UpdateMovieComponent},
+  // movie
+  // {path: "", redirectTo: 'movies', pathMatch: 'full'},
+  // {path: "movies", component: MovieListComponent},
+  // {path: "movies/create", component: CreateMovieComponent},
+  // {path: "movies/update/:id", component: UpdateMovieComponent},
   {path: "movies/:id", component: MovieDetailsComponent},
 
   //movie_client
@@ -84,10 +90,11 @@ const routes: Routes = [
   {path: "tickets", component: CreateTicketComponent},
   // {path: "movies/update/:id", component: UpdateMovieComponent},
   {path: "tickets/:id", component: TicketDetailsComponent},
+    ]}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class UserRoutingModule { }

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Movie } from '../entities/movie/movie';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Theater } from '../entities/theater/theater';
 
 @Injectable({
   providedIn: 'root'
@@ -53,6 +54,10 @@ export class MovieService {
 
   getAllMoviesUpComing(): Observable<Movie[]>{
     return this.httpClient.get<Movie[]>(`${this.baseURL}/up-coming`);
+  }
+
+  getAllTheaterByMovieId(id: number): Observable<Theater[]>{
+    return this.httpClient.get<Theater[]>(`${this.baseURL}/${id}/theaters`);
   }
 
 }

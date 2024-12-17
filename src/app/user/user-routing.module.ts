@@ -86,7 +86,7 @@ const routes: Routes = [
   {path: "movies-client", component: MoviesClientComponent},
 
   //tickets
-  {path: "", redirectTo: 'tickets', pathMatch: 'full'},
+  // {path: "", redirectTo: 'tickets', pathMatch: 'full'},
   {path: "tickets", component: CreateTicketComponent},
   // {path: "movies/update/:id", component: UpdateMovieComponent},
   {path: "tickets/:id", component: TicketDetailsComponent},

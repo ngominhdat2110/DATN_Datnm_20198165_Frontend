@@ -82,8 +82,8 @@ const routes: Routes = [
   {path: "admin/movies/:id", component: MovieDetailsComponent},
 
   //tickets
-  {path: "", redirectTo: 'tickets', pathMatch: 'full'},
-  {path: "admin/tickets", component: CreateTicketComponent},
+  {path: "", redirectTo: 'admin/tickets', pathMatch: 'full'},
+  {path: "admin/tickets/create", component: CreateTicketComponent},
   // {path: "movies/update/:id", component: UpdateMovieComponent},
   {path: "admin/tickets/:id", component: TicketDetailsComponent},
 

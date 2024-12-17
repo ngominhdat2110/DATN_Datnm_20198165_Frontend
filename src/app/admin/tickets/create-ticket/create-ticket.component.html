@@ -3,11 +3,25 @@
   
     <form (ngSubmit)="onSubmit()" class="ticket-form">
       <!-- Chọn Phim -->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="movie">Chọn Phim</label>
         <select id="movie" [(ngModel)]="ticket.movieId" name="movieId" required>
           <option *ngFor="let movie of movies" [value]="movie.id">{{ movie.name }}</option>
         </select>
+      </div> -->
+
+      <div class="form-group">
+        <label for="movie">Thông Tin Phim</label>
+        <div *ngIf="currentMovie">
+          <h3>{{ currentMovie.name }}</h3>
+          <p><strong>Thể Loại:</strong> {{ currentMovie.genre }}</p>
+          <p><strong>Mô Tả:</strong> {{ currentMovie.detail }}</p>
+          <p><strong>Thời lượng:</strong> {{ currentMovie.duration}}</p>
+          <p><strong>Ngôn ngữ:</strong> {{ currentMovie.language}}</p>
+        </div>
+        <div *ngIf="!currentMovie">
+          <p>Đang tải thông tin phim...</p>
+        </div>
       </div>
   
       <!-- Chọn Rạp -->
@@ -58,14 +72,16 @@
       <div class="form-group">
         <label for="seats">Chọn Ghế</label>
         <div class="seat-selection">
-            <div *ngFor="let seat of seats" 
-                 class="seat-button" 
-                 [class.selected]="seat.selected" 
-                 (click)="toggleSeat(seat)">
-                {{ seat.name }}
-            </div>
-        </div>
+          <div *ngFor="let seat of seats" 
+               class="seat-button" 
+               [class.selected]="ticket.seatId.includes(seat.id)" 
+               [class.disabled]="seat.status === 0" 
+               (click)="toggleSeat(seat)">
+              {{ seat.name }}
+          </div>
+      </div>
     </div>
+     <!-- (click)="seat.status === 1 ? toggleSeat(seat) : null"> -->
   
       <!-- Chọn Thời Gian -->
       <!-- <div class="form-group">

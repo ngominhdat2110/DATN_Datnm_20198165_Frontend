@@ -36,6 +36,11 @@ $border-radius: 5px;
   border: 1px solid #388e3c; /* Đường viền màu xanh đậm */
 }
 
+.disabled {
+  opacity: 0.5; // Giảm độ sáng cho ghế không thể chọn
+  pointer-events: none; // Ngăn không cho nhấp vào ghế này
+}
+
 .ticket-container {
   max-width: 600px;
   margin: 0 auto;

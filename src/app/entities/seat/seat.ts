@@ -4,6 +4,4 @@ export class Seat {
     type!: string;
     roomId!: number;
     status!: number
-
-    selected!: false;
 }

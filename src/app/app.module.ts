@@ -9,7 +9,7 @@ import { CreateCustomerComponent } from './admin/customer/create-customer/create
 import { FormsModule } from '@angular/forms';
 import { UpdateCustomerComponent } from './admin/customer/update-customer/update-customer.component';
 import { CustomerDetailsComponent } from './admin/customer/customer-details/customer-details.component';
-import { HeaderComponent } from './admin/header/header.component';
+// import { HeaderComponent } from './admin/header/header.component';
 import { SidenavComponent } from './admin/sidenav/sidenav.component';
 import { HomeComponent } from './admin/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -45,7 +45,7 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
 import { MoviesClientComponent } from './user/movies-client/movies-client.component';
 import { CreateTicketComponent } from './admin/tickets/create-ticket/create-ticket.component';
 import { TicketDetailsComponent } from './admin/tickets/ticket-details/ticket-details.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './admin/login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { UserComponent } from './user/user.component';
 
@@ -53,6 +53,12 @@ import { UserRoutingModule} from './user/user-routing.module';
 import { AdminRoutingModule } from './admin/admin-routing.module';
 import { NavbarComponent } from './user/navbar/navbar.component';
 import { FooterComponent } from './user/footer/footer.component';
+import { TicketListComponent } from './admin/tickets/ticket-list/ticket-list.component';
+import { UpdateTicketComponent } from './admin/tickets/update-ticket/update-ticket.component';
+import { CreateMovieTheaterComponent } from './admin/movie-theater/create-movie-theater/create-movie-theater.component';
+import { MovieTheaterDetailsComponent } from './admin/movie-theater/movie-theater-details/movie-theater-details.component';
+import { MovieTheaterListComponent } from './admin/movie-theater/movie-theater-list/movie-theater-list.component';
+import { UpdateMovieTheaterComponent } from './admin/movie-theater/update-movie-theater/update-movie-theater.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +67,7 @@ import { FooterComponent } from './user/footer/footer.component';
     CreateCustomerComponent,
     UpdateCustomerComponent,
     CustomerDetailsComponent,
-    HeaderComponent,
+    // HeaderComponent,
     SidenavComponent,
     HomeComponent,
     CreateTheaterComponent,
@@ -90,6 +96,12 @@ import { FooterComponent } from './user/footer/footer.component';
     UserComponent,
     NavbarComponent,
     FooterComponent,
+    TicketListComponent,
+    UpdateTicketComponent,
+    CreateMovieTheaterComponent,
+    MovieTheaterDetailsComponent,
+    MovieTheaterListComponent,
+    UpdateMovieTheaterComponent,
   ],
   imports: [
     BrowserModule,

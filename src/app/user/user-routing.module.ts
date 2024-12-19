@@ -30,8 +30,9 @@ import { MovieDetailsComponent } from '../admin/movies/movie-details/movie-detai
 import { MoviesClientComponent } from '../user/movies-client/movies-client.component';
 import { CreateTicketComponent } from '../admin/tickets/create-ticket/create-ticket.component';
 import { TicketDetailsComponent } from '../admin/tickets/ticket-details/ticket-details.component';
-import { LoginComponent } from '../login/login.component';
+import { LoginComponent } from '../admin/login/login.component';
 import { UserComponent } from './user.component';
+import { TicketListComponent } from '../admin/tickets/ticket-list/ticket-list.component';
 
 const routes: Routes = [
 
@@ -87,7 +88,8 @@ const routes: Routes = [
 
   //tickets
   // {path: "", redirectTo: 'tickets', pathMatch: 'full'},
-  {path: "tickets", component: CreateTicketComponent},
+  {path: "order-tickets", component: TicketListComponent},
+  {path: "tickets/order/:movieId", component: CreateTicketComponent},
   // {path: "movies/update/:id", component: UpdateMovieComponent},
   {path: "tickets/:id", component: TicketDetailsComponent},
     ]}

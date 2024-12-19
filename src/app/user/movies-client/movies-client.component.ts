@@ -36,7 +36,7 @@ export class MoviesClientComponent implements OnInit {
     // Xử lý hành động mua vé, ví dụ: chuyển hướng đến trang thanh toán
     console.log('Mua vé cho phim:', movie.name);
     // Hoặc chuyển hướng đến màn hình thanh toán
-    this.router.navigate(['/tickets', movie.id]);
+    this.router.navigate(['/tickets/order', movie.id]);
   }
 
 }

@@ -1,1 +1,41 @@
-<p>ticket-details works!</p>
+<!-- ticket-details.component.html -->
+<div *ngIf="ticket" class="ticket-details">
+    <h1>Chi tiết vé</h1>
+    <p><strong>Mã vé:</strong> {{ ticket.id }}</p>
+    <p><strong>Trạng thái vé:</strong> <span [ngClass]="{'ticket-status': ticket.status === 1}">{{ ticket.status === 1 ? 'Đã mua' : 'Chưa mua' }}</span></p>
+    
+    <div *ngIf="movie">
+      <h2>Thông tin phim</h2>
+      <p><strong>Tên phim:</strong> {{ movie.name }}</p>
+      <p><strong>Thể loại:</strong> <span class="movie-genre">{{ movie.genre }}</span></p>
+    </div>
+  
+    <div *ngIf="customer">
+      <h2>Thông tin người dùng</h2>
+      <p><strong>Tên người dùng:</strong> {{ customer.fullName }}</p>
+    </div>
+  
+    <div *ngIf="theater">
+      <h2>Thông tin rạp</h2>
+      <p><strong>Tên rạp:</strong> {{ theater.name }}</p>
+    </div>
+  
+    <div *ngIf="room">
+      <h2>Thông tin phòng chiếu</h2>
+      <p><strong>Tên phòng:</strong> {{ room.name }}</p>
+    </div>
+  
+    <div *ngIf="seats.length > 0">
+      <h2>Thông tin ghế ngồi</h2>
+      <ul>
+        <li *ngFor="let seatName of ticket.seatName">
+          {{ seatName }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div *ngIf="!ticket || !movie || !customer || !theater || !room" class="loading">
+    <p>Loading...</p>
+  </div>
+  

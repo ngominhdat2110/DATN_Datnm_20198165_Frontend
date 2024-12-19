@@ -30,14 +30,14 @@ import { MovieDetailsComponent } from './admin/movies/movie-details/movie-detail
 import { MoviesClientComponent } from './user/movies-client/movies-client.component';
 import { CreateTicketComponent } from './admin/tickets/create-ticket/create-ticket.component';
 import { TicketDetailsComponent } from './admin/tickets/ticket-details/ticket-details.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './admin/login/login.component';
 
 import { AdminComponent} from './admin/admin.component'
 import { UserComponent } from './user/user.component'
 
 const routes: Routes = [
 
-  { path: '', component: LoginComponent },
+  { path: '', component: MoviesClientComponent },
 
   { path: 'admin', component: AdminComponent },
   { path: 'user', component: UserComponent },

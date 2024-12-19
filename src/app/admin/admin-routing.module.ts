@@ -28,8 +28,9 @@ import { UpdateMovieComponent } from './movies/update-movie/update-movie.compone
 import { MovieDetailsComponent } from './movies/movie-details/movie-details.component';
 import { CreateTicketComponent } from './tickets/create-ticket/create-ticket.component';
 import { TicketDetailsComponent } from './tickets/ticket-details/ticket-details.component';
-import { LoginComponent } from '../login/login.component';
+import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin.component';
+import { TicketListComponent } from './tickets/ticket-list/ticket-list.component';
 
 const routes: Routes = [
 
@@ -83,8 +84,9 @@ const routes: Routes = [
 
   //tickets
   {path: "", redirectTo: 'admin/tickets', pathMatch: 'full'},
+  {path: "admin/tickets", component: TicketListComponent},
   {path: "admin/tickets/create", component: CreateTicketComponent},
-  // {path: "movies/update/:id", component: UpdateMovieComponent},
+  {path: "admin/tickets/update/:id", component: UpdateMovieComponent},
   {path: "admin/tickets/:id", component: TicketDetailsComponent},
 
 ]}

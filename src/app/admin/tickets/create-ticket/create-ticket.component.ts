@@ -31,25 +31,28 @@ export class CreateTicketComponent implements OnInit {
               private theaterService: TheaterService,
               private roomService: RoomService,
               private seatService: SeatService,
-              private movieTheater: MovieTheater,
+              // private movieTheater: MovieTheater,
               private router : Router,
               private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.getMovieInfoFromRoute(),
-    // this.getListMovies(),
+    // this.getMovieInfoFromRoute(),
+    this.getListMovies(),
     this.getListTheater(),
     this.getListRoom(),
     this.getListSeat()
   }
   getListTheater() {
-    const movieId = this.route.snapshot.paramMap.get('id');
+    const movieId = this.route.snapshot.paramMap.get('movieId');
     if (movieId) {
       this.movieService.getAllTheaterByMovieId(+movieId).subscribe(data => {
         this.theaters = data;
         console.log('Thông tin danh sach rap:', this.theaters);
       });
     }
+    // this.theaterService.getTheatersList().subscribe(data => {
+    //   this.theaters = data;
+    // });
   }
   getListRoom() {
     this.roomService.getRoomsList().subscribe(data => {
@@ -61,14 +64,14 @@ export class CreateTicketComponent implements OnInit {
       this.seats = data;
     });
   }
-  // getListMovies() {
-  //   this.movieService.getMoviesList().subscribe(data => {
-  //     this.movies = data;
-  //   });
-  // }
+  getListMovies() {
+    this.movieService.getMoviesList().subscribe(data => {
+      this.movies = data;
+    });
+  }
 
   getMovieInfoFromRoute() {
-    const movieId = this.route.snapshot.paramMap.get('id');
+    const movieId = this.route.snapshot.paramMap.get('movieId');
     if (movieId) {
       this.movieService.getMovieById(+movieId).subscribe(data => {
         this.currentMovie = data;
